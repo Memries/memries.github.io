@@ -34,10 +34,10 @@
  
 			<div class="row">
 				<div class="col-md-6 col-sm-12 col-md-offset-3 subscribe">
-					<form class="form-horizontal" role="form" action="sign-up" id="subscribeForm" method="POST">
+					<form class="form-horizontal" role="form" action="http://my.memri.es/sign-up" id="subscribeForm" method="POST">
 						<div class="form-group">
 							<div class="col-md-7 col-sm-6 col-sm-offset-1 col-md-offset-0">
-								<input class="form-control input-lg" name="email" type="email" id="address" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
+								<input class="form-control input-lg" name="email" type="email" id="email" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
 							</div>
 							<div class="col-md-5 col-sm-4">
 								<button type="submit" class="btn btn-success btn-lg">SIGN UP NOW</button>
@@ -266,9 +266,9 @@
     $('form').submit(function(e) {
       e.preventDefault();
       var email = $('#email').val();
-      $.post('/sign-up', {email: email}, function(d) {
+      $.post('http://my.memri.es/sign-up', {email: email}, function(d) {
         console.log(d);
-        swal("Thank you!", "You will receive your first email tonight. Until then, have a nice day!", "success");
+        swal("Thank you!", "Thanks for signing up. You will receive your first email tonight. Until then, have a nice day!", "success");
       });
     });
   });
