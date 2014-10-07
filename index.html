@@ -268,7 +268,8 @@
       var email = $('#email').val();
       $.post('http://my.memri.es/sign-up', {email: email}, function(d) {
         console.log(d);
-        swal("Thank you!", "Thanks for signing up. You will receive your first email tonight. Until then, have a nice day!", "success");
+        if (d) swal("Thank you!", "Thanks for signing up. You will receive your first email tonight. Until then, have a nice day!", "success");
+        else swal("Oops... 😔 ", "There is already an account for this email address.", "error")
       }).fail(function() {
         swal("Oops... 😔 ", "There seems to have been an error. Please try again later.", "error")
       });
