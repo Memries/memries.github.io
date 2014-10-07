@@ -269,6 +269,8 @@
       $.post('http://my.memri.es/sign-up', {email: email}, function(d) {
         console.log(d);
         swal("Thank you!", "Thanks for signing up. You will receive your first email tonight. Until then, have a nice day!", "success");
+      }).fail(function() {
+        swal("Oops... 😔 ", "There seems to have been an error. Please try again later.", "error")
       });
     });
   });
