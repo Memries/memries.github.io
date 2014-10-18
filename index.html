@@ -40,7 +40,7 @@
 								<input class="form-control input-lg" name="email" type="email" id="email" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
 							</div>
 							<div class="col-md-5 col-sm-4">
-								<button type="submit" class="btn btn-success btn-lg">SIGN UP NOW</button>
+								<button type="submit" id="signup" class="btn btn-success btn-lg">SIGN UP NOW</button>
 							</div>
 						</div>
 					</form>
@@ -266,19 +266,23 @@
     $('form').submit(function(e) {
       e.preventDefault();
       var email = $('#email').val();
+      $('#signup').attr('disabled', 'disabled');
+
       $.post('http://my.memri.es/sign-up', {email: email}, function(d) {
-        console.log(d);
         if (d !== '') {
         	swal("Thank you!", "Thanks for signing up. You will receive your first email tonight. Until then, have a nice day!", "success");
         	ga('send', 'pageview', {
 					  'page': '/sign-up',
 					  'title': 'Sign Up'
 					});
+					$('#signup').removeAttr('disabled');
         } else {
         	swal("Oops...", "There is already an account for this email address.", "error");
+        	$('#signup').removeAttr('disabled');
         }
       }).fail(function() {
         swal("Oops...", "There seems to have been an error. Please try again later.", "error");
+        $('#signup').removeAttr('disabled');
       });
     });
   });
