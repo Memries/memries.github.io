@@ -10,7 +10,7 @@ textarea, textarea:focus {
 }
 
 body {
-	background-color: #fefefe;
+	/*background-color: #fefefe;*/
 	color: rgba(0,0,0,.8);
 	font-family: futura;
 }
