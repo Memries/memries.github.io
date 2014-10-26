@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
-	<title>Memri.es - Your new digital diary</title>
+	<title>Memri.es - Remember your life</title>
 	 
 	<link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/sweet-alert.css"rel="stylesheet">
+	<link href="css/sweet-alert.css"rel="stylesheet">
 	 
 	<link href="css/main.css" rel="stylesheet">
  
@@ -18,15 +18,15 @@
 	<![endif]-->
  
 	<link rel="shortcut icon" href="images/favicon.png">
-	<script src="js/pace.js"></script>
+	<!-- <script src="js/pace.js"></script> -->
 	<script src="js/sweet-alert.min.js"></script>
  
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<div class="preloader"></div>
-	<main id="top" class="masthead" role="main">
+	<!-- <div class="preloader"></div> -->
+	<main id="top" class="masthead loading" role="main">
 		<div class="container">
 			<div class="logo"> <a href="index.html#"><img src="images/logo@2x.png" height="56" width="255" alt="logo"></a>
 			</div>
@@ -34,14 +34,14 @@
 			<h1><strong>Remember your life</strong>.<br><small style="color: white;">One day at a time.</small></h1>
  
 			<div class="row">
-				<div class="col-md-6 col-sm-12 col-md-offset-3 subscribe">
+				<div class="col-md-8 col-sm-12 col-md-offset-2 subscribe">
 					<form class="form-horizontal" role="form" action="http://my.memri.es/sign-up" id="subscribeForm" method="POST">
 						<div class="form-group">
-							<div class="col-md-7 col-sm-6 col-sm-offset-1 col-md-offset-0">
+							<div class="col-md-8 col-sm-6 col-sm-offset-1 col-md-offset-0">
 								<input class="form-control input-lg" name="email" type="email" id="email" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
 							</div>
-							<div class="col-md-5 col-sm-4">
-								<button type="submit" id="signup" class="btn btn-success btn-lg">SIGN UP NOW</button>
+							<div class="col-md-4 col-sm-3">
+								<button type="submit" id="signup" class="btn btn-success btn-lg">REQUEST AN INVITE</button>
 							</div>
 						</div>
 					</form>
@@ -232,7 +232,7 @@
 					</div>
 				</div>
 			</div>
-		</main> -->
+		</main>
  
 		<div class="container">
 			<section class="row breath">
@@ -240,7 +240,7 @@
 					<p>&copy; 2014 Memri.es. All Rights Reserved</p>
 				</div>
 			</section>
-		</div>
+		</div> -->
  
  
  
@@ -254,6 +254,8 @@
 
 
  $(function() {
+ 	$('.masthead').removeClass('loading');
+
     $('.scrollto, .gototop').bind('click',function(event){
 		 var $anchor = $(this);
 		 $('html, body').stop().animate({
@@ -269,7 +271,7 @@
 
       $.post('http://my.memri.es/sign-up', {email: email}, function(d) {
         if (d !== '') {
-        	swal("Thank you!", "Thanks for signing up. You will receive your first email tonight. Until then, have a nice day!", "success");
+        	swal("Thank you!", "Thanks for signing up. You will receive your invite shortly, as soon as more are made available. Until then, have a nice day!", "success");
         	ga('send', 'pageview', {
 					  'page': '/sign-up',
 					  'title': 'Sign Up'
