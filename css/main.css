@@ -112,8 +112,9 @@ a:hover,a:focus{color:#5173bd;}
 	color:#FFF;
 	text-align:center;
 	text-shadow:0 1px 0 rgba(0,0,0,.1);
-	background-color:#6883cc;
-	background-image:url("../images/header.png");
+	/*background-color:#6883cc;*/
+	background-color: rgba(0,0,0,.8);
+	background-image:url("../images/header.jpg");
 	background-repeat:no-repeat;
 	background-position:top center;
 	background-attachment:fixed;
@@ -135,6 +136,8 @@ a:hover,a:focus{color:#5173bd;}
 	-moz-animation:none!important;
 	-ms-animation:none!important;
 	-o-animation:none!important;
+
+	opacity: 0;
 	}
 
 @keyframes fadein{
