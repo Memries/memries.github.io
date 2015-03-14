@@ -22,6 +22,10 @@
 	<script src="js/sweet-alert.min.js"></script>
  
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+	<script type="text/javascript">
+	window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+	heap.load("3632788147");
+	</script>
 </head>
 
 <body>
@@ -45,16 +49,37 @@
 							</div>
 						</div>
 					</form>
-					<span id="result" class="alertMsg"></span> </div>
+					<span id="result" class="alertMsg"></span>
 				</div>
+			</div>
  
-				<!-- <a href="index.html#explore" class="scrollto">
-				<p>SCROLL DOWN TO EXPLORE</p>
-				<p class="scrollto--arrow"><img src="images/scroll_down.png" alt="scroll down arrow"></p>
-				</a> -->
+			<!-- <a href="index.html#explore" class="scrollto">
+			<p>SCROLL DOWN TO EXPLORE</p>
+			<p class="scrollto--arrow"><img src="images/scroll_down.png" alt="scroll down arrow"></p>
+			</a> -->
 		</div>
 	</main>
-  <!-- 
+
+	<div class="container-fluid">
+		<section class="white row">
+			<div class="col-sm-4 col-sm-offset-2">
+				<img src="images/frame-black.png" alt="">
+			</div>
+		</section>
+		<section class="blue row">
+			<div class="col-sm-4 col-sm-offset-2">
+				<img src="images/frame.png" alt="">
+				<img src="images/place-card.svg" alt="">
+			</div>
+		</section>
+		<section class="white row">
+			<div class="col-sm-4 col-sm-offset-2">
+				<img src="images/frame-black.png" alt="">
+			</div>
+		</section>
+	</div>
+
+	<!--
 	<div class="container" id="explore">
  
 		<div class="section-title">
@@ -161,7 +186,7 @@
 		</div>
  
 
-	    
+		
 		<div class="container">
  
 			<div class="section-title">
@@ -196,7 +221,7 @@
 			</section>
  
 
-	    
+		
  
 		<div class="section-title">
 			<h5>Frequently Asked Questions</h5>
@@ -220,7 +245,7 @@
  
 	</div>
  
-	    
+		
 		<main class="footercta" role="main">
 			<div class="container">
 				<h1>The Most Simple & <strong>Powerful Way</strong> <br>
@@ -240,10 +265,8 @@
 					<p>&copy; 2014 Memri.es. All Rights Reserved</p>
 				</div>
 			</section>
-		</div> -->
- 
- 
- 
+		</div>
+	-->
  
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
@@ -252,49 +275,48 @@
  
 <script>
 
+$(window).load(function() {
+	$('.masthead').delay(2000).removeClass('loading');
 
- $(window).load(function() {
- 	$('.masthead').delay(2000).removeClass('loading');
+	$('.scrollto, .gototop').bind('click',function(event){
+		var $anchor = $(this);
+		$('html, body').stop().animate({
+			scrollTop: $($anchor.attr('href')).offset().top
+		}, 1500,'easeInOutExpo');
+	 	event.preventDefault();
+	});
 
-    $('.scrollto, .gototop').bind('click',function(event){
-		 var $anchor = $(this);
-		 $('html, body').stop().animate({
-         scrollTop: $($anchor.attr('href')).offset().top
-          }, 1500,'easeInOutExpo');
-     event.preventDefault();
-      });
+	$('form').submit(function(e) {
+		e.preventDefault();
+		var email = $('#email').val();
+		$('#signup').attr('disabled', 'disabled');
 
-    $('form').submit(function(e) {
-      e.preventDefault();
-      var email = $('#email').val();
-      $('#signup').attr('disabled', 'disabled');
+		$.post('http://my.memri.es/sign-up', {email: email}, function(d) {
+			if (d !== '') {
+				swal("Thank you!", "Thanks for signing up. You will receive your invite shortly, as soon as more are made available. Until then, have a nice day!", "success");
+				ga('send', 'pageview', {
+					'page': '/sign-up',
+					'title': 'Sign Up'
+				});
+				$('#signup').removeAttr('disabled');
+			} else {
+				swal("Oops...", "There is already an account for this email address.", "error");
+				$('#signup').removeAttr('disabled');
+			}
+	  	}).fail(function() {
+			swal("Oops...", "There seems to have been an error. Please try again later.", "error");
+			$('#signup').removeAttr('disabled');
+	  	});
+	});
+});
 
-      $.post('http://my.memri.es/sign-up', {email: email}, function(d) {
-        if (d !== '') {
-        	swal("Thank you!", "Thanks for signing up. You will receive your invite shortly, as soon as more are made available. Until then, have a nice day!", "success");
-        	ga('send', 'pageview', {
-					  'page': '/sign-up',
-					  'title': 'Sign Up'
-					});
-					$('#signup').removeAttr('disabled');
-        } else {
-        	swal("Oops...", "There is already an account for this email address.", "error");
-        	$('#signup').removeAttr('disabled');
-        }
-      }).fail(function() {
-        swal("Oops...", "There seems to have been an error. Please try again later.", "error");
-        $('#signup').removeAttr('disabled');
-      });
-    });
-  });
-  
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-55593380-1', 'auto');
-  ga('send', 'pageview');
+ga('create', 'UA-55593380-1', 'auto');
+ga('send', 'pageview');
 
 </script>
  

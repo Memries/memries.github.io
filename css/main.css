@@ -112,6 +112,7 @@ a:hover,a:focus{color:#5173bd;}
 	color:#FFF;
 	text-align:center;
 	text-shadow:0 0 25px rgba(0,0,0,.25);
+	height: 100vh;
 	/*background-color:#6883cc;*/
 	/*background-color: rgba(0,0,0,.8);*/
 	background-image:url("../images/header.jpg");
@@ -122,6 +123,7 @@ a:hover,a:focus{color:#5173bd;}
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	background-size:cover;
+	border-bottom: 1px solid #4a4a4a;
 	}
 
 .masthead .container{
@@ -287,7 +289,7 @@ to {
 .scrollto, .scrollto:hover {
 	margin:30px;
 	display:block;
-	color:#FFF;
+	color:rgba(0,0,0,.8);
 	text-decoration:none;
 	width:200px;
 	margin:0 auto;
@@ -301,9 +303,21 @@ to {
 	-webkit-animation: arrowbounce 1s alternate infinite; /* Safari and Chrome */
 	-o-animation: arrowbounce 1s alternate infinite; /* Opera */
 }
+/*============== FEATURES SECTIONS ==============*/
+section {
+	padding: 60px 0;
+}
+section.white {
+	background-color: #fafafa;
+}
+
+section.blue {
+	background-color: #3498DB;
+}
+
 /*========== 3. HERO IMAGE ==============*/
 
-.section-title {
+/*.section-title {
 	text-align:center;
 	margin-top:60px;
 	margin-bottom:30px;
@@ -316,10 +330,10 @@ to {
 }
 .heroimg img, .clientlogo img {
 	max-width:100%;
-}
+}*/
 /*========== 4. FEATURES ==============*/
 
-.features {
+/*.features {
 	margin:25px 0;
 }
 .thumbnail {
@@ -328,10 +342,10 @@ to {
 }
 .thumbnail .caption p {
 	color: #94a3a8;
-}
+}*/
 /*Hover Animation*/
 
-.thumbnail img {
+/*.thumbnail img {
 	-moz-transition:all 0.6s ease;
 	-webkit-transition:all 0.6s ease;
 	-ms-transition:all 0.6s ease;
@@ -345,10 +359,10 @@ to {
 	-ms-transform:scale(1.05);
 	transform:scale(1.05);
 	z-index:2;
-}
+}*/
 /*========== 5. TESTIMONIALS ==============*/
 
-.testblock {
+/*.testblock {
 	width:100%;
 	height:auto;
 	padding:20px;
@@ -396,7 +410,7 @@ to {
 }
 /* Animation */
 
-.testblock {
+/*.testblock {
 	-moz-transition:all 0.6s ease;
 	-webkit-transition:all 0.6s ease;
 	-ms-transition:all 0.6s ease;
@@ -410,10 +424,10 @@ to {
 	-ms-transform:scale(1.05);
 	transform:scale(1.05);
 	z-index:2;
-}
+}*/
 /*========== 6. PLANS AND PRICING ==============*/
 
-.pricing {
+/*.pricing {
 	padding:25px;
 	color:#FFF;
 	text-align:center;
@@ -453,10 +467,10 @@ to {
 }
 .color3 {
 	background-color:#16a085;
-}
+}*/
 /* Animation */
 
-.pricing {
+/*.pricing {
 	-moz-transition:all 0.6s ease;
 	-webkit-transition:all 0.6s ease;
 	-ms-transition:all 0.6s ease;
@@ -470,18 +484,18 @@ to {
 	-ms-transform:scale(1.05);
 	transform:scale(1.05);
 	z-index:2;
-}
+}*/
 
 /*========== 7. FAQ ==============*/
 
-.faq p {
+/*.faq p {
 	margin-bottom:25px;
-}
+}*/
 
 /*==========8. FOOTER ==============*/
 
 
-.footercta {
+/*.footercta {
 	padding: 60px 15px;
 	color: #FFF;
 	text-align: center;
@@ -504,7 +518,7 @@ to {
 	padding:0 13px;
 	display:inline-block;
 	padding-bottom: 15px;
-}
+}*/
 
 
 
