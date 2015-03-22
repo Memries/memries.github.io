@@ -6,6 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Memries aims to help people remember their life, by writing down the little things that make up daily life as well as the big adventures; celebrating everyone’s journey by providing the easiest way possible to document it; and share it to those who matter the most.">
 	<title>Memries &clubs; Remember your Life</title>
+
+	<meta property="og:title" content="Memries &clubs; Remember your Life"/>
+	<meta property="og:site_name" content="Memries"/>
+	<meta property="og:url" content="http://memri.es"/>
+	<meta property="og:image" content="http://memri.es/images/sticker.png"/>
+	<meta property="og:type" content="product"/>
+	<meta property="og:description" content="Memries aims to help people remember their life, by writing down the little things that make up daily life as well as the big adventures; celebrating everyone’s journey by providing the easiest way possible to document it; and share it to those who matter the most. In private beta at the moment. Register now to get your invite."/>
+	<meta property="fb:app_id" content="947993798565384"/>
+
 	 
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/sweet-alert.css" rel="stylesheet">
@@ -24,6 +33,16 @@
 </head>
 
 <body>
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=947993798565384&version=v2.0";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 	<main id="top" class="masthead loading" role="main">
 		<div class="container">
 			<div class="logo">
@@ -49,10 +68,15 @@
 			</div>
 
 			<div class="row">
+				<a class="fb-share-button"
+					data-href="http://memri.es"
+					data-layout="button_count">
+				</a>
+
 				<a class="twitter-share-button" href="https://twitter.com/share"
-				data-via="trymemries" data-related="trymemries"
-				data-text="Remember your life with Memries, one day at a time. I requested an invite, you should too!">
-				Tweet
+					data-via="trymemries" data-related="trymemries" data-url="http://memri.es"
+					data-text="Remember your life with Memries, one day at a time. I requested an invite, you should too!">
+					Tweet
 				</a>
 				<script>
 				window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
