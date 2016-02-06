@@ -59,14 +59,6 @@ mixpanel.init("40bb0978040766e3cec238802628a294");</script>
 
 	<main id="top" class="masthead loading" role="main">
 		<div class="container">
-			
-			<div class="scene">
-				<img src="images/airmail.svg" class="airmail">
-				<img src="images/coffee.svg" class="coffee">
-				<img src="images/camera-lying.svg" class="camera">
-				<img src="images/moleskine.svg" class="moleskine">
-				<img src="images/pencil.svg" class="pencil">
-			</div>
 
 			<div class="logo">
 				<img src="images/logo@2x.png" height="80" width="308" alt="Memries">
@@ -113,6 +105,14 @@ mixpanel.init("40bb0978040766e3cec238802628a294");</script>
 		</div>
 	</main>
 
+	<div class="scene">
+		<img src="images/airmail.svg" class="airmail">
+		<img src="images/coffee.svg" class="coffee">
+		<img src="images/camera-lying.svg" class="camera">
+		<img src="images/moleskine.svg" class="moleskine">
+		<img src="images/pencil.svg" class="pencil">
+	</div>
+
 	<a href="http://my.memri.es/login" class="btn btn-login">Sign in</a>
  
 <script src="js/jquery.js"></script>
@@ -148,7 +148,7 @@ $(window).load(function() {
 					'title': 'Sign Up'
 				});
 				mixpanel.track("Sign up");
-				
+
 				$('#signup').removeAttr('disabled');
 			} else {
 				swal("Oops...", "There is already an account for this email address.", "error");
