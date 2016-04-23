@@ -308,12 +308,16 @@ to {
 }
 .subscribe {
 	padding: 45px 0;
+	z-index: 10;
 }
 .alertMsg {
 	float: left;
 	font-size: 14px;
 	display: block;
 	padding: 5px 17px;
+}
+.social-share {
+	z-index: 9;
 }
 
 
